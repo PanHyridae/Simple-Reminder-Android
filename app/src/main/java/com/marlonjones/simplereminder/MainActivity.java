@@ -1,5 +1,6 @@
 package com.marlonjones.simplereminder;
 
+import android.app.NotificationManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
                 .input(R.string.input_hint, R.string.input_hint, false, new MaterialDialog.InputCallback() {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
-                        // Create notification, show toast, close app
                         //notification
+                        NotificationManager notificationManager = (NotificationManager)
+                                getSystemService(NOTIFICATION_SERVICE);
                         //toast
                         Toast.makeText(MainActivity.this, "Reminder Created. Set as Ongoing Notification",
                                 Toast.LENGTH_SHORT).show();

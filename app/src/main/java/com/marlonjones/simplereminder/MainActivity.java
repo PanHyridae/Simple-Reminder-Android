@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         //notification
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
                             builder.setOngoing(true);
-                            builder.setSmallIcon(R.drawable.ic_stat_notification);
+                            builder.setSmallIcon(R.drawable.ic_note);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
                             builder.setContentTitle("Notifications Title");
                             builder.setContentText("Your notification content here.");

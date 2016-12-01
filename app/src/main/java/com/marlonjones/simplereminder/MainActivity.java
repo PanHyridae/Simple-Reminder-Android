@@ -16,6 +16,7 @@ import android.text.InputType;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -35,16 +36,18 @@ public class MainActivity extends AppCompatActivity {
                     public void onInput(MaterialDialog dialog, CharSequence input) {
                         //notification
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
-                            builder.setOngoing(true);
+                            builder.setOngoing(true); //Make persistent
                             builder.setSmallIcon(R.drawable.ic_note);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
                             builder.setContentTitle("Remember!");
-                            builder.setContentText(input.getText.toString());
+                            builder.setContentText(input.toString()); //Get text from dialog input
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //toast
                         Toast.makeText(MainActivity.this, "Reminder Created. Set as Ongoing Notification",
                                 Toast.LENGTH_SHORT).show();
+                        //Close Activity
+                        finish();
                     }
                 }).show();
     }

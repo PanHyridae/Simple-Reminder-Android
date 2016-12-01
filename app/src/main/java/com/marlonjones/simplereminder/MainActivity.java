@@ -27,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         new MaterialDialog.Builder(this)
                 .title(R.string.input)
                 .inputType(InputType.TYPE_CLASS_TEXT)
@@ -41,16 +38,14 @@ public class MainActivity extends AppCompatActivity {
                             builder.setOngoing(true);
                             builder.setSmallIcon(R.drawable.ic_note);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
-                            builder.setContentTitle("Notifications Title");
-                            builder.setContentText("Your notification content here.");
+                            builder.setContentTitle("Remember!");
+                            builder.setContentText(input.getText.toString());
                             builder.setSubText("Tap to view documentation about notifications.");
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //toast
                         Toast.makeText(MainActivity.this, "Reminder Created. Set as Ongoing Notification",
                                 Toast.LENGTH_SHORT).show();
-                        //close app
-                        finish();
                     }
                 }).show();
     }

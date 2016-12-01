@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         new MaterialDialog.Builder(this)
                 .title(R.string.input)
                 .inputType(InputType.TYPE_CLASS_TEXT)
-                .input(null, null, new MaterialDialog.InputCallback() {
+                .input(null, null, new MaterialDialog.InputCallback()
+                {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
                         //notification
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //toast
-                        Toast.makeText(MainActivity.this, "Reminder Created. Set as Ongoing Notification",
+                        Toast.makeText(MainActivity.this, "Reminder Created and set as Ongoing Notification.",
                                 Toast.LENGTH_SHORT).show();
                         //Close Activity
                         finish();

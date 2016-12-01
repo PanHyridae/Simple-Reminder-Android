@@ -24,18 +24,18 @@ import com.afollestad.materialdialogs.MaterialDialog;
 public class MainActivity extends AppCompatActivity {
 
     public static final int NOTIFICATION_ID = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new MaterialDialog.Builder(this)
                 .title(R.string.input)
                 .inputType(InputType.TYPE_CLASS_TEXT)
-                .input(R.string.input_hint, R.string.input_hint, false, new MaterialDialog.InputCallback() {
+                .input(null, null, new MaterialDialog.InputCallback() {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
                         //notification
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
+                            builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
                             builder.setOngoing(true); //Make persistent
                             builder.setSmallIcon(R.drawable.ic_note);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));

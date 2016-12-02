@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
                             builder.setContentTitle("Remember!");
                             builder.setContentText(input.toString()); //Get text from dialog input
+                            builder.addAction(R.drawable.ic_action_name, "Done", pendingIntent);
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //toast

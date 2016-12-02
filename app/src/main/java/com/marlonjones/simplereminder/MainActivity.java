@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 public class MainActivity extends AppCompatActivity {
 //TODO - MAKE BACKGROUND CLEAR AND WRITE TUTORIAL ON ANDROID NOTIFICATIONS AND OTHER THINGS
     public static final int NOTIFICATION_ID = 1;
+    PackageManager manager = getPackageManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
-                        //notification + opener
+                        //notification
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
+                            Intent notificationIntent = new Intent(manager.getLaunchIntentForPackage("com.marlonjones.simplereminder"));
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
                             builder.setOngoing(true); //Make persistent
                             builder.setSmallIcon(R.drawable.ic_note);
@@ -43,13 +46,6 @@ public class MainActivity extends AppCompatActivity {
                             builder.setContentTitle("Remember!");
                             builder.setContentText(input.toString()); //Get text from dialog input
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                        Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);
-
-                        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-
-                        PendingIntent intent = PendingIntent.getActivity(getApplicationContext(), 0,
-                                notificationIntent, 0);
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //toast
                         Toast.makeText(MainActivity.this, "Reminder Created and set as Ongoing Notification.",

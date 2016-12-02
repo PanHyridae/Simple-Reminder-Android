@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 public class MainActivity extends AppCompatActivity {
-
+//TODO - MAKE BACKGROUND CLEAR AND WRITE TUTORIAL ON ANDROID NOTIFICATIONS AND OTHER THINGS
     public static final int NOTIFICATION_ID = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

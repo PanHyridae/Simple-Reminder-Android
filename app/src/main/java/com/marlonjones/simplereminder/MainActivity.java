@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
-                        //notification
+                        //notification + opener
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
                             builder.setOngoing(true); //Make persistent
@@ -43,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
                             builder.setContentTitle("Remember!");
                             builder.setContentText(input.toString()); //Get text from dialog input
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                        Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);
+
+                        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+                        PendingIntent intent = PendingIntent.getActivity(getApplicationContext(), 0,
+                                notificationIntent, 0);
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //toast
                         Toast.makeText(MainActivity.this, "Reminder Created and set as Ongoing Notification.",

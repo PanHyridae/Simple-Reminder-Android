@@ -58,10 +58,8 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                         //Close app when done entering in text
                         finish();
-
-
                     }
-
+                    //Close app when dialog is dismissed (ex: click outside of dialog)
                 }).dismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {

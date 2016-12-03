@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">SimpleReminder</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Remember!</string>
     <string name="input">Set Your Reminder</string>
     <string name="input_hint">Enter your reminder text</string>
 </resources>

@@ -23,7 +23,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 public class MainActivity extends AppCompatActivity {
-//TODO - MAKE BACKGROUND CLEAR AND WRITE TUTORIAL ON ANDROID NOTIFICATIONS AND OTHER THINGS
+//TODO - ADD ANDROID WEAR AND TIME FUNCTIONALITY
     public static final int NOTIFICATION_ID = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //toast
-                        Toast.makeText(MainActivity.this, "Reminder Created and set as Ongoing Notification.",
+                        Toast.makeText(MainActivity.this, "Done! Reminder has been set. Check your Notification Bar! :)",
                                 Toast.LENGTH_SHORT).show();
                         //Close app when done entering in text
                         finish();

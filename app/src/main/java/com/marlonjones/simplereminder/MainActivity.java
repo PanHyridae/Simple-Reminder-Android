@@ -3,6 +3,7 @@ package com.marlonjones.simplereminder;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -29,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         new MaterialDialog.Builder(this)
                 .title(R.string.input)
+                .autoDismiss(false)
                 .inputType(InputType.TYPE_CLASS_TEXT)
                 .input(null, null, new MaterialDialog.InputCallback()
+
                 {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
@@ -53,9 +56,21 @@ public class MainActivity extends AppCompatActivity {
                         //toast
                         Toast.makeText(MainActivity.this, "Reminder Created and set as Ongoing Notification.",
                                 Toast.LENGTH_SHORT).show();
-                        //Close Activity
+                        //Close app when done entering in text
                         finish();
+
+
                     }
-                }).show();
+
+                }).dismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+               finish();
+            }
+        }).show();
+    }
+    //Closes the app when the back button is pressed
+    public void onBackPressed(){
+        finish();
     }
 }

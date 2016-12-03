@@ -2,7 +2,7 @@
 App made for Android 4.3 and above. When opening the app, you can put in a message to display as a peristant notification. Simple app for a simple purpose. If you need help with making notifications, this is a good way to learn that or use as sample code.
 
 Libraries used: 
-<a href="https://github.com/afollestad/material-dialogs" >Material Dialogs by Aidan Follestad</a> and <a href="https://github.com/code-troopers/android-betterpickers">Better Pickers by code-troopers</a>.
+<a href="https://github.com/afollestad/material-dialogs" >Material Dialogs by Aidan Follestad</a>.
 
 Android Wear coming soon.
 ````

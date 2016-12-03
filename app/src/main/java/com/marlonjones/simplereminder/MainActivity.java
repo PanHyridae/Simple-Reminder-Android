@@ -42,13 +42,6 @@ public class MainActivity extends AppCompatActivity {
                                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP),
                                 0);
 
-                            //Intent to close notification on Action click
-                            Intent closer = new Intent();
-                            closer.setAction(CLOSE_ACTION);
-                            PendingIntent closeIntent = PendingIntent.getBroadcast(getApplicationContext(),
-                                    0, closer, pendingIntent.FLAG_CANCEL_CURRENT);
-                        if (CLOSE_ACTION.equals(closer)){notificationManager.cancel(NOTIFICATION_ID);}
-
                             //Rest of Notification
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
                             builder.setOngoing(true); //Make persistent

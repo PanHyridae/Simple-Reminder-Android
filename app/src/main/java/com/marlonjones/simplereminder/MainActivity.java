@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
 import android.text.InputType;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -19,7 +18,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 public class MainActivity extends AppCompatActivity {
 //TODO - ADD ANDROID WEAR AND TIME FUNCTIONALITY
     public static final int NOTIFICATION_ID = 1;
-    private static final String CLOSE_ACTION = "com.marlonjones.simplereminder.CLOSE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -3,7 +3,7 @@
     <string name="input">Set Your Reminder</string>
     <string name="input_hint">Enter your reminder text</string>
     <string name="confirm_title">Close Notification?</string>
-    <string name="confirm_content">Would you like to close this notification, or would you like to make another one?</string>
+    <string name="confirm_content">Would you like to close this reminder, or would you like to make another one?</string>
     <string name="confirm_pos">Make Another</string>
     <string name="confirm_neg">Close it</string>
 </resources>

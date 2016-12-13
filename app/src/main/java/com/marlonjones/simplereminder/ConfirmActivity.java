@@ -41,6 +41,9 @@ public class ConfirmActivity extends AppCompatActivity {
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        //toast
+                        Toast.makeText(ConfirmActivity.this, "Done! Reminder has been closed.",
+                                Toast.LENGTH_SHORT).show();
                         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                         notificationManager.cancel(NOTIFICATION_ID);
                     }

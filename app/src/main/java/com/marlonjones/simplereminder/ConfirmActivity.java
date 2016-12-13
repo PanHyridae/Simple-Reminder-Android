@@ -22,6 +22,11 @@ public class ConfirmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        new MaterialDialog.Builder(this)
+                .title(R.string.confirm_title)
+                .content(R.string.confirm_content)
+                .positiveText(R.string.confirm_pos)
+                .negativeText(R.string.confirm_neg)
+                .show();
     }
 }

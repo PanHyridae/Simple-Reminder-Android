@@ -33,22 +33,23 @@ public class MainActivity extends AppCompatActivity {
                 {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
+                        //Notification Click - Opens ConfirmActivity
+                            Intent myIntent = new Intent(getApplicationContext(), ConfirmActivity.class);
+                            PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),
+                                    0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                         //notification body
-                        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
-                            PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 1,
-                                new Intent(getApplicationContext(), MainActivity.class)
-                                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
-                            //builder.setAutoCancel(true);
                             builder.setOngoing(true); //Make persistent
-                            builder.setContentIntent(pendingIntent); //OnClick for Reopening App
+                            builder.setContentIntent(pendingIntent);
                             builder.setSmallIcon(R.drawable.ic_note);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
                             builder.setContentTitle("Remember!");
                             builder.setContentText(input.toString()); //Get text from dialog input
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
+
                         //toast
                         Toast.makeText(MainActivity.this, "Done! Reminder has been set. Check your Notification Bar! :)",
                                 Toast.LENGTH_LONG).show();

@@ -39,21 +39,16 @@ public class MainActivity extends AppCompatActivity {
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
                             PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 1,
                                 new Intent(getApplicationContext(), MainActivity.class)
-                                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP),
-                                0);
-                            Intent close = new Intent (getApplicationContext(), MainActivity.class);
+                                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
+                            builder.setAutoCancel(true);
                             builder.setOngoing(true); //Make persistent
                             builder.setContentIntent(pendingIntent); //OnClick for Reopening App
-                            //builder.setContentIntent(closeIntent); //Removed until Working
                             builder.setSmallIcon(R.drawable.ic_note);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
                             builder.setContentTitle("Remember!");
                             builder.setContentText(input.toString()); //Get text from dialog input
-                            //PendingIntent closeIntent = PendingIntent.getActivities(getApplicationContext(),0, new Intent[]{close},PendingIntent.FLAG_UPDATE_CURRENT);                          builder.setContentIntent(closeIntent);
-                            builder.addAction(R.drawable.ic_action_name, "Done", pendingIntent/*closeIntent*/); //Action for the closer
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
-
                         //toast
                         Toast.makeText(MainActivity.this, "Done! Reminder has been set. Check your Notification Bar! :)",
                                 Toast.LENGTH_LONG).show();

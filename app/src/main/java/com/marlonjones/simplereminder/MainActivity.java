@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                                 new Intent(getApplicationContext(), MainActivity.class)
                                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
-                            builder.setAutoCancel(true);
+                            //builder.setAutoCancel(true);
                             builder.setOngoing(true); //Make persistent
                             builder.setContentIntent(pendingIntent); //OnClick for Reopening App
                             builder.setSmallIcon(R.drawable.ic_note);

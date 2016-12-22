@@ -1,4 +1,4 @@
-# Remember - A Simple Reminder Notification App for Android
+# Remember - A Simple Reminder App for Android
 App made for Android 4.3 and above. When opening the app, you can put in a message to display as a peristant notification. Simple app for a simple purpose. If you need help with making notifications, this is a good way to learn that or use as sample code.
 
 Libraries used: 

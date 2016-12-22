@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Remember!</string>
+    <string name="app_name">Remember</string>
     <string name="input">Set Your Reminder</string>
     <string name="input_hint">Enter your reminder text</string>
     <string name="confirm_title">Close Notification?</string>

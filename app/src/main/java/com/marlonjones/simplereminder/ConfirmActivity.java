@@ -24,7 +24,6 @@ public class ConfirmActivity extends AppCompatActivity {
                 .title(R.string.confirm_title)
                 .content(R.string.confirm_content)
                 .positiveText(R.string.confirm_pos)
-                .backgroundColorRes(R.color.colorDialog)
                 .negativeText(R.string.confirm_neg)
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override

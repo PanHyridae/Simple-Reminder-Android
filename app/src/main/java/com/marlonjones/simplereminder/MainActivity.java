@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         new MaterialDialog.Builder(this)
                 .title(R.string.input)
                 .autoDismiss(false)
-                .backgroundColorRes(R.color.colorDialog)
                 .inputType(InputType.TYPE_CLASS_TEXT)
                 .input(null, null, new MaterialDialog.InputCallback()
 

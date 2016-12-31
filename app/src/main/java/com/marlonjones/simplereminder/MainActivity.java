@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
                             builder.setOngoing(true); //Make persistent
                             builder.setContentIntent(pendingIntent);
-                            builder.setSmallIcon(R.drawable.ic_note);
+                            builder.setSmallIcon(R.drawable.ic_small);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
                             builder.setContentTitle("Remember!");
                             builder.setContentText(input.toString()); //Get text from dialog input

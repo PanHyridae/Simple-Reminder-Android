@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         new MaterialDialog.Builder(this)
                 .title(R.string.input)
                 .autoDismiss(false)
+                .backgroundColorRes(R.color.colorDialog)
                 .inputType(InputType.TYPE_CLASS_TEXT)
                 .input(null, null, new MaterialDialog.InputCallback()
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                             builder.setOngoing(true); //Make persistent
                             builder.setContentIntent(pendingIntent);
                             builder.setSmallIcon(R.drawable.ic_small);
-                            builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+                            builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_large));
                             builder.setContentTitle("Remember!");
                             builder.setContentText(input.toString()); //Get text from dialog input
                             notificationManager.notify(NOTIFICATION_ID, builder.build());

@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 public class MainActivity extends AppCompatActivity {
-//TODO - ADD ANDROID WEAR AND TIME FUNCTIONALITY
+//TODO - Finish Android Wear App, and add in multiple reminders.
     public static final int NOTIFICATION_ID = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

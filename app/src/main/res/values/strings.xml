@@ -5,6 +5,9 @@
     <string name="confirm_title">Close Notification?</string>
     <string name="persist_check">Persistent Notification</string>
     <string name="confirm">Reminder Set!</string>
+    <string name="remind_time">Set Time</string>
+    <string name="time_button">Add Time</string>
+    <string name="set_note">Show Notification</string>
     <string name="confirm_content">Would you like to close this reminder, or remake it?</string>
     <string name="confirm_pos">Remake it</string>
     <string name="confirm_neg">Close it</string>

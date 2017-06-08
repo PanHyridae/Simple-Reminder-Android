@@ -4,15 +4,19 @@ package com.marlonjones.simplereminder;
  */
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
 import android.text.InputType;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
                 .title(R.string.input)
                 .autoDismiss(false)
                 .inputType(InputType.TYPE_CLASS_TEXT)
+                .negativeText(R.string.remind_time)
+                .positiveText(R.string.set_note)
+                .onNegative(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        // Show Time Picker Dialog and pass to Receiver
+                    }
+                })
+
                 .checkBoxPromptRes(R.string.persist_check, false, null)
                 .input(null, null, new MaterialDialog.InputCallback()
 

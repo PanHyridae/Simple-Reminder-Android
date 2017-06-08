@@ -22,12 +22,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Aidan's Library - Material Dialogs - Extends to .show(); and wraps around the Notification and other parts
+        //Aidan's Library - Material Dialogs
+        // Extends to .show(); and wraps around the Notification and other parts
         //Input Dialog
         new MaterialDialog.Builder(this)
                 .title(R.string.input)
                 .autoDismiss(false)
                 .inputType(InputType.TYPE_CLASS_TEXT)
+                .checkBoxPromptRes(R.string.persist_check, false, null)
                 .input(null, null, new MaterialDialog.InputCallback()
 
                 {
@@ -42,17 +44,17 @@ public class MainActivity extends AppCompatActivity {
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
-                            builder.setOngoing(true); //Make persistent
                             builder.setContentIntent(pendingIntent);
                             builder.setSmallIcon(R.drawable.ic_small);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_large));
                             builder.setContentTitle("Remember!");
+                            builder.setOngoing(false);
+                        if (dialog.isPromptCheckBoxChecked())builder.setOngoing(true);
                             builder.setContentText(input.toString()); //Get text from dialog input
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
 
                         //toast
-                        Toast.makeText(MainActivity.this, "Done! Reminder has been set. Check your Notification Bar! :)",
-                                Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, R.string.confirm, Toast.LENGTH_LONG).show();
 
                         //Close app when done entering in text
                         finish();

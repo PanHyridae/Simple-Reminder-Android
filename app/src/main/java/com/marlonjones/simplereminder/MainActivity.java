@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //CheckBox for Time
-        mode24Hours = (CheckBox) findViewById(R.id.mode_24_hours);
 
         //Aidan's Library - Material Dialogs
         // Extends to .show(); and wraps around the Notification and other parts

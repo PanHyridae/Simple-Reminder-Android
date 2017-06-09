@@ -4,8 +4,6 @@ package com.marlonjones.simplereminder;
  */
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -14,17 +12,22 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
 import android.text.InputType;
+import android.widget.CheckBox;
 import android.widget.Toast;
-
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
+
 public class MainActivity extends AppCompatActivity {
-//TODO - Finish Android Wear App, and add in multiple reminders.
+//TODO - Finish Android Wear App, and change some code to Kotlin (Maybe).
     public static final int NOTIFICATION_ID = 1;
+    private CheckBox mode24Hours;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //CheckBox for Time
+        mode24Hours = (CheckBox) findViewById(R.id.mode_24_hours);
 
         //Aidan's Library - Material Dialogs
         // Extends to .show(); and wraps around the Notification and other parts
@@ -38,10 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        // Show Time Picker Dialog and pass to Receiver
+
                     }
                 })
-
                 .checkBoxPromptRes(R.string.persist_check, false, null)
                 .input(null, null, new MaterialDialog.InputCallback()
 
@@ -49,9 +51,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
                         //Notification Click - Opens ConfirmActivity
-                            Intent myIntent = new Intent(getApplicationContext(), ConfirmActivity.class);
+                            Intent confirmIntent = new Intent(getApplicationContext(), ConfirmActivity.class);
                             PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),
-                                    0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                                    0, confirmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                        //Broadcast Intent
+
 
                         //notification body
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -65,10 +69,8 @@ public class MainActivity extends AppCompatActivity {
                         if (dialog.isPromptCheckBoxChecked())builder.setOngoing(true);
                             builder.setContentText(input.toString()); //Get text from dialog input
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
-
                         //toast
                         Toast.makeText(MainActivity.this, R.string.confirm, Toast.LENGTH_LONG).show();
-
                         //Close app when done entering in text
                         finish();
                     }
@@ -82,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }).show();
     }
-
     //Closes the app when the back button is pressed
     public void onBackPressed(){
         finish();
     }
+
 }

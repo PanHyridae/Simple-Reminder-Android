@@ -14,7 +14,6 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 public class ConfirmActivity extends AppCompatActivity {
-    //TODO - ADD ANDROID WEAR AND TIME FUNCTIONALITY
     public static final int NOTIFICATION_ID = 1;
 
     @Override

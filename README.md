@@ -4,7 +4,6 @@ App made for Android 4.3 and above. When opening the app, you can put in a messa
 Libraries used: 
 <a href="https://github.com/afollestad/material-dialogs" >Material Dialogs by Aidan Follestad</a>.
 
-Android Wear coming soon.
 ````
 Copyright 2016 Marlon Jones
 

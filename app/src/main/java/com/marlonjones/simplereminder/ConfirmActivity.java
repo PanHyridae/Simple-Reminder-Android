@@ -36,7 +36,6 @@ public class ConfirmActivity extends AppCompatActivity {
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        //toast
                         Toast.makeText(ConfirmActivity.this, R.string.done,
                                 Toast.LENGTH_SHORT).show();
                         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -50,7 +49,6 @@ public class ConfirmActivity extends AppCompatActivity {
             }
         }).show();
     }
-    //Closes the app when the back button is pressed
     public void onBackPressed(){
         finish();
     }

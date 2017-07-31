@@ -12,25 +12,18 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
 import android.text.InputType;
-import android.widget.CheckBox;
 import android.widget.Toast;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 
 public class MainActivity extends AppCompatActivity {
-//TODO - Finish Android Wear App, and change some code to Kotlin (Maybe).
+//TODO - Change some code to Kotlin
     public static final int NOTIFICATION_ID = 1;
-    private CheckBox mode24Hours;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //CheckBox for Time
-
-        //Aidan's Library - Material Dialogs
-        // Extends to .show(); and wraps around the Notification and other parts
-        //Input Dialog
         new MaterialDialog.Builder(this)
                 .title(R.string.input)
                 .autoDismiss(false)
@@ -43,20 +36,15 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 })
-                .checkBoxPromptRes(R.string.persist_check, false, null)
                 .input(null, null, new MaterialDialog.InputCallback()
 
                 {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
-                        //Notification Click - Opens ConfirmActivity
                             Intent confirmIntent = new Intent(getApplicationContext(), ConfirmActivity.class);
                             PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(),
                                     0, confirmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-                        //Broadcast Intent
 
-
-                        //notification body
                             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
                             builder.setStyle(new NotificationCompat.BigTextStyle().bigText(input.toString())); //BigText
@@ -64,13 +52,10 @@ public class MainActivity extends AppCompatActivity {
                             builder.setSmallIcon(R.drawable.ic_small);
                             builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_large));
                             builder.setContentTitle("Remember!");
-                            builder.setOngoing(false);
-                        if (dialog.isPromptCheckBoxChecked())builder.setOngoing(true);
+                            builder.setOngoing(true);
                             builder.setContentText(input.toString()); //Get text from dialog input
                             notificationManager.notify(NOTIFICATION_ID, builder.build());
-                        //toast
                         Toast.makeText(MainActivity.this, R.string.confirm, Toast.LENGTH_LONG).show();
-                        //Close app when done entering in text
                         finish();
                     }
 
@@ -83,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }).show();
     }
-    //Closes the app when the back button is pressed
     public void onBackPressed(){
         finish();
     }

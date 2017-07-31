@@ -2,14 +2,15 @@
     <string name="app_name">Remember</string>
     <string name="input">Set Your Reminder</string>
     <string name="input_hint">Enter your reminder text</string>
-    <string name="confirm_title">Close Notification?</string>
+    <string name="confirm_title">Notification Selected</string>
     <string name="persist_check">Make Persistent</string>
     <string name="confirm">Reminder Set!</string>
     <string name="remind_time">Set Time</string>
     <string name="time_button">Add Time</string>
+    <string name="another">Make Another</string>
     <string name="done">Done! Reminder has been closed.</string>
     <string name="set_note">Show Notification</string>
-    <string name="confirm_content">Would you like to close this reminder, or remake it?</string>
+    <string name="confirm_content">What would you like to do?</string>
     <string name="confirm_pos">Remake it</string>
     <string name="confirm_neg">Close it</string>
 </resources>

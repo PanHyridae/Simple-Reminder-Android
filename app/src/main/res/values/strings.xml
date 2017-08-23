@@ -1,16 +1,48 @@
 <resources>
-    <string name="app_name">Remember</string>
-    <string name="input">Set Your Reminder</string>
-    <string name="input_hint">Enter your reminder text</string>
-    <string name="confirm_title">Notification Selected</string>
-    <string name="persist_check">Make Persistent</string>
-    <string name="confirm">Reminder Set!</string>
-    <string name="remind_time">Set Time</string>
-    <string name="time_button">Add Time</string>
-    <string name="another">Make Another</string>
-    <string name="done">Done! Reminder has been closed.</string>
-    <string name="set_note">Show Notification</string>
-    <string name="confirm_content">What would you like to do?</string>
-    <string name="confirm_pos">Remake it</string>
-    <string name="confirm_neg">Close it</string>
+    <string name="app_name">Ping</string>
+    <string name="title_activity_main">Ping</string>
+    <string name="title_activity_create">Create Reminder</string>
+    <string name="title_activity_edit">Edit Reminder</string>
+    <string name="persis">Persistent</string>
+    <string name="photo">Add a Photo</string>
+    <string name="time">Set Time</string>
+    <string name="repeat">Repeat Notification</string>
+    <string name="long_text">Long Text</string>
+    <string name="ok">OK</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="perm">Permissions Needed!</string>
+    <string name="grant">GRANT</string>
+    <string name="about_title">About</string>
+    <string name="donate">Donate</string>
+    <string name="donate_text">While not required, a donation would be appreciated to allow me to
+    pay for bills, supplies, or food. Thank you for any contribution, or just for using my app :)</string>
+
+    <string name="long_text_error">Too much text! Toggle Long Text mode to continue.</string>
+    <string name="saved">Reminder Saved!</string>
+    <string name="updated">Reminder Updated!</string>
+
+    <string name="about_text" translatable="false">
+        <![CDATA[
+           <b>Ping</b>, an Android App for simple reminders developed and designed by <b>Marlon Jones</b>.<br/>
+            <br/>
+           <b> This Android app is Open Sourced on <a href=\'https://github.com/MJonesDev/Ping-Reminder-Android\'>GitHub</a>
+            under <a href = \'https://github.com/MJonesDev/Ping-Reminder-Android/blob/master/license\'>Apache 2.0</a>. </b>
+            <br/><br/>
+            Developer Links:
+            <br/>
+           <b> <a href = \'https://MJonesDev.github.io\'>Website</a>&nbsp;&nbsp;
+            <a href = \'https://github.com/MJonesDev\'>GitHub</a>&nbsp;&nbsp;
+            <a href = \'https://twitter.com/MJonesDev\'>Twitter</a>&nbsp;&nbsp;
+            <a href = \'https://plus.google.com/+MarlonJones\'>Google+</a>&nbsp;&nbsp;
+            <a href = \'https://dribbble.com/MJonesDev\'>Dribbble</a></b>
+        ]]>
+    </string>
+
+    <!--Donate-->
+    <string name="donate_option1">$1</string>
+    <string name="donate_option2">$5 (Coffee)</string>
+    <string name="donate_option3">$10 (A Meal)</string>
+    <string name="donate_option4">$15 (Meal and Coffee)</string>
+    <string name="donate_option5">$20 (Bills)</string>
+    <string name="donate_confirm">Thanks for Donating! You are awesome ♥</string>
 </resources>

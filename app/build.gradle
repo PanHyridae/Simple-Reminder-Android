@@ -7,8 +7,9 @@ android {
         applicationId "com.marlonjones.simplereminder"
         minSdkVersion 18
         targetSdkVersion 26
-        versionCode 3
-        versionName "1.0.5"
+        versionCode 7
+        versionName "2.0"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -28,5 +29,6 @@ dependencies {
     compile 'com.android.support:design:26.0.0-beta2'
     compile 'com.afollestad.material-dialogs:core:0.9.4.5'
     compile 'com.afollestad.material-dialogs:commons:0.9.4.5'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }

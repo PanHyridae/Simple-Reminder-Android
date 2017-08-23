@@ -1,5 +1,7 @@
-# Remember - A Simple Reminder App for Android
-App made for Android 4.3 and above. When opening the app, you can put in a message to display as a peristant notification. Simple app for a simple purpose. If you need help with making notifications, this is a good way to learn that or use as sample code.
+# Ping - A Simple Reminder App for Android
+Ping (formerlly Remember for Android) is a simple and quick reminder app that will create a Persistant Notification on your device
+at a specified time. Unlike most Reminder apps, this one is made for quick access, and quick use rather than long lists or long 
+recurring reminders. 
 
 Libraries used: 
 <a href="https://github.com/afollestad/material-dialogs" >Material Dialogs by Aidan Follestad</a>.

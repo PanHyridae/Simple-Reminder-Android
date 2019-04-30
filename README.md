@@ -6,6 +6,8 @@ other projects.
 Libraries used: 
 <a href="https://github.com/afollestad/material-dialogs" >Material Dialogs by Aidan Follestad</a>.
 
+## License - Apache 2.0
+
 ````
 Copyright 2016 Marlon Jones
 

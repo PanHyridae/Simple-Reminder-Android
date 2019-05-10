@@ -1,11 +1,9 @@
 # A Simple Reminder App for Android
-
-## NOTE - Old Project
-This is an old personal project that I am no longer maintaining or updating. However, the code will stay open for anyone to use in their own projects, and I will also still monitor the Issues for any questions about the project. 
-
 Remember is a simple and quick reminder app that will create a Persistant Notification on your device. Unlike most Reminder apps, this one is made for quick access, and quick use rather than long lists or long 
 recurring reminders. This app is also in the process of being rewritten as "Ping", but may not be completed in time due to college and 
-other projects. 
+other projects.
+## NOTE - Old Project
+This is an old personal project that I am no longer maintaining or updating. However, the code will stay open for anyone to use in their own projects, and I will also still monitor the Issues for any questions about the project.  
 
 Libraries used: 
 <a href="https://github.com/afollestad/material-dialogs" >Material Dialogs by Aidan Follestad</a>.
